@@ -21,7 +21,7 @@ test('initial conditions', () => {
 
 test('Checkbox disables button on first click and enables on second click', () => {
   render(<App/>)
-  const checkbox = screen.getByRole('checkbox');
+  const checkbox = screen.getByRole('checkbox', {name: 'Disabled button'});
   const button = screen.getByRole('button');
   fireEvent.click(checkbox);
   expect(button).toBeDisabled();
